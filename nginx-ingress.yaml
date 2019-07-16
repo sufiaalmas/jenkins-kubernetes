@@ -3,10 +3,14 @@ kind: Ingress
 metadata:
   name: nginx-ingress
 spec:
+  tls:
+  - secretName: tls-secret
   rules:
-  - host: nginx-application.com
+  - host: application.com
     http:
       paths:
-      - backend:
+      - path: 
+        backend:
           serviceName: load-service
           servicePort: 80
+
